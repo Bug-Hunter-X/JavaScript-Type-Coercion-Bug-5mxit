@@ -1,0 +1,3 @@
+function foo(a,b){return a+b;}console.log(foo(2,3));//Expected Output:5console.log(foo(2,"3"));//Unexpected Output:23
+This is because of type coercion. Javascript automatically converts the number 2 to string before concatenation if the other operand is a string. This can lead to unexpected results if you are not careful. This problem occurs mostly in function that involves both number and string type parameters. In this example, the function was designed to add two numbers. However, the second parameter is a string resulting in unexpected output.
+To avoid this, always check the type of parameters before performing arithmetic operations.
